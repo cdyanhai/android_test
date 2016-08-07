@@ -1,13 +1,11 @@
 package com.example.yanxiaoyong.myapplication;
 
 import android.content.Intent;
-import android.icu.util.TimeUnit;
-import android.support.v4.util.TimeUtils;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
-import android.view.Window;
+import android.widget.TextView;
 
 import com.example.yanxiaoyong.myapplication.db.User;
 import com.zhy.http.okhttp.OkHttpUtils;
@@ -15,13 +13,12 @@ import com.zhy.http.okhttp.callback.StringCallback;
 
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
-import io.realm.RealmResults;
 import okhttp3.Call;
 import okhttp3.OkHttpClient;
-import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
 
+    private TextView textView;
     private Realm realm;
     private RealmConfiguration realmConfig;
     @Override
@@ -29,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        textView = (TextView)findViewById(R.id.textView3);
+        textView.setMovementMethod(new ScrollingMovementMethod());
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .connectTimeout(10000L, java.util.concurrent.TimeUnit.MILLISECONDS)
                 .readTimeout(10000L, java.util.concurrent.TimeUnit.MILLISECONDS )
@@ -89,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response, int id) {
                         String  html = response;
-                        Log.v("debug", html);
+                        textView.setText(html);
                     }
                 });
     }
