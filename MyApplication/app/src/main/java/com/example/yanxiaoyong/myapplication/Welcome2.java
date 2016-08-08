@@ -5,6 +5,8 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import org.greenrobot.eventbus.EventBus;
+
 public class Welcome2 extends AppCompatActivity {
 
 
@@ -24,6 +26,8 @@ public class Welcome2 extends AppCompatActivity {
                     Intent intent = new Intent();
                     intent.setClass(Welcome2.this,MainActivity.class);
                     startActivity(intent);
+
+
                     finish();
                     break;
                 default:

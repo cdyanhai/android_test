@@ -19,16 +19,24 @@ import io.realm.RealmResults;
 import okhttp3.Call;
 import okhttp3.OkHttpClient;
 import android.util.Log;
+import android.widget.TextView;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 public class MainActivity extends AppCompatActivity {
 
     private Realm realm;
     private RealmConfiguration realmConfig;
+    private TextView mTv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        mTv = (TextView)findViewById(R.id.textView);
 
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .connectTimeout(10000L, java.util.concurrent.TimeUnit.MILLISECONDS)
@@ -49,8 +57,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        EventBus.getDefault().register(this);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
+    }
 
     public void OnClick(View view){
 
@@ -70,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
 //                .show();
 
         Intent intent = new Intent();
-        intent.setClass(MainActivity.this, ListActivity.class);
+        intent.setClass(MainActivity.this, Welcome.class);
         startActivity(intent);
     }
 
@@ -93,5 +107,11 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
+
+    @Subscribe(threadMode = ThreadMode.POSTING)
+    public void OnShowMsgEvent(MsgEvent msgEnent){
+        mTv.setText("EventBus Msg:" + msgEnent.getMsg());
+    }
+
 
 }

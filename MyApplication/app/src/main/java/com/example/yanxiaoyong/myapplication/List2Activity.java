@@ -35,14 +35,14 @@ public class List2Activity extends AppCompatActivity {
 
     mLv.setAdapter(mSimpleAdapter);//为ListView绑定适配器
 
-        mLv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-        @Override
-        public void onItemClick(AdapterView<?> agr0, View arg1, int arg2,   long arg3) {
-            setTitle("你点击了第"+arg2+"行");//设置标题栏显示点击的行
-        }
-    });
-}
+//        mLv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//
+//        @Override
+//        public void onItemClick(AdapterView<?> agr0, View arg1, int arg2,   long arg3) {
+//            setTitle("你点击了第"+arg2+"行");//设置标题栏显示点击的行
+//        }
+ //   });
+//}
 
     }
 }
