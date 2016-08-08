@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,12 +14,14 @@ import java.util.HashMap;
 public class List2Activity extends AppCompatActivity {
 
     private ListView mLv;
+    private TextView mTv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_img);
 
         mLv = (ListView)findViewById(R.id.listView2);
+        mTv = (TextView) findViewById(R.id.textView6);
         ArrayList<HashMap<String, Object>> listItem = new ArrayList<HashMap<String,     Object>>();/*在数组中存放数据*/
         for(int i=0;i<10;i++)
         {
@@ -39,10 +42,10 @@ public class List2Activity extends AppCompatActivity {
 
         @Override
         public void onItemClick(AdapterView<?> agr0, View arg1, int arg2,   long arg3) {
-            setTitle("你点击了第"+arg2+"行");//设置标题栏显示点击的行
+            mTv.setText("你点击了第"+arg2+"行");//设置标题栏显示点击的行
         }
     });
 }
 
-    }
+
 }
