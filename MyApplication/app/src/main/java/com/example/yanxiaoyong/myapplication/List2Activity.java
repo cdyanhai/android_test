@@ -38,7 +38,7 @@ public class List2Activity extends AppCompatActivity {
 
     mLv.setAdapter(mSimpleAdapter);//为ListView绑定适配器
 
-//        mLv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        mLv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //
 //        @Override
 //        public void onItemClick(AdapterView<?> agr0, View arg1, int arg2,   long arg3) {
