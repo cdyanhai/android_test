@@ -15,11 +15,6 @@ import io.realm.Realm;
 import io.realm.RealmConfiguration;
 import okhttp3.Call;
 import okhttp3.OkHttpClient;
-import android.widget.TextView;
-
-import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -55,13 +50,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        EventBus.getDefault().register(this);
+      //  EventBus.getDefault().register(this);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        EventBus.getDefault().unregister(this);
+      //  EventBus.getDefault().unregister(this);
     }
 
     public void OnClick(View view){
@@ -87,6 +82,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void OnClick2(View view){
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this, List2Activity.class);
+        startActivity(intent);
+    }
+
 
     public void OnGetClick(View view){
         String url = "http://www.jd.com";
@@ -107,10 +108,10 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
-    @Subscribe(threadMode = ThreadMode.POSTING)
-    public void OnShowMsgEvent(MsgEvent msgEnent){
-        mTv.setText("EventBus Msg:" + msgEnent.getMsg());
-    }
+//    @Subscribe(threadMode = ThreadMode.POSTING)
+//    public void OnShowMsgEvent(MsgEvent msgEnent){
+//        mTv.setText("EventBus Msg:" + msgEnent.getMsg());
+//    }
 
 
 }

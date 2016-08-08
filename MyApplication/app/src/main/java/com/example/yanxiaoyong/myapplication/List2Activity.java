@@ -23,10 +23,11 @@ public class List2Activity extends AppCompatActivity {
         mLv = (ListView)findViewById(R.id.listView2);
         mTv = (TextView) findViewById(R.id.textView6);
         ArrayList<HashMap<String, Object>> listItem = new ArrayList<HashMap<String,     Object>>();/*在数组中存放数据*/
-        for(int i=0;i<10;i++)
+        for(int i=0;i<20;i++)
         {
             HashMap<String, Object> map = new HashMap<String, Object>();
-            map.put("ItemImage", R.mipmap.icon);//加入图片            map.put("ItemTitle", "第"+i+"行");
+            map.put("ItemImage", R.mipmap.icon);//加入图片
+            map.put("ItemTitle", "第"+i+"行");
             map.put("ItemText", "这是第"+i+"行");
             listItem.add(map);
         }
