@@ -20,6 +20,7 @@ android {
     }
 }
 
+ext.support_version = "24.1.1"
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
@@ -29,4 +30,5 @@ dependencies {
 
     compile 'com.zhy:okhttputils:2.6.2'
     compile 'org.greenrobot:eventbus:3.0.0'
+    compile "com.android.support:recyclerview-v7:${support_version}"
 }

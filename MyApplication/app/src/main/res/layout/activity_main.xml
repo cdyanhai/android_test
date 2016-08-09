@@ -55,4 +55,14 @@
         android:layout_toEndOf="@+id/button"
         android:onClick="OnClick2" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="list3"
+        android:id="@+id/button3"
+        android:layout_alignTop="@+id/btn_Get"
+        android:layout_above="@+id/textView3"
+        android:layout_toEndOf="@+id/button2"
+        android:onClick="OnClick3" />
+
 </RelativeLayout>
