@@ -23,7 +23,8 @@
         <activity android:name=".Welcome" />
         <activity android:name=".ListActivity" />
         <activity android:name=".List2Activity" />
-        <activity android:name=".RecyclerViewActivity"></activity>
+        <activity android:name=".RecyclerViewActivity" />
+        <activity android:name=".ViewPageActivity"></activity>
     </application>
 
 </manifest>

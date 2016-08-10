@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.method.ScrollingMovementMethod;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -55,6 +57,27 @@ public class MainActivity extends AppCompatActivity {
         });
 
         EventBus.getDefault().register(this);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        menu.add(0,1,1,"Exit");
+        menu.add(0, 2, 2, "About");
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId()==1)
+        {
+            finish();
+        }
+        if(item.getItemId()==2)
+        {
+            textView.setText(item.getTitle());
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -122,5 +145,11 @@ public class MainActivity extends AppCompatActivity {
         mTv.setText("EventBus Msg:" + msgEnent.getMsg());
     }
 
+
+    public  void  OnViewPagerClick(View view){
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this, ViewPageActivity.class);
+        startActivity(intent);
+    }
 
 }
