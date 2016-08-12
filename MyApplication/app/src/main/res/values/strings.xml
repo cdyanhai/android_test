@@ -3,4 +3,7 @@
     <string name="title_activity_welcome">Welcome</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="lyout_name1">第一页</string>
+    <string name="lyout_name2">第二页</string>
+    <string name="lyout_name3">第三页</string>
 </resources>

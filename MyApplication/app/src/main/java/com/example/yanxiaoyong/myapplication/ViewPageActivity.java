@@ -42,6 +42,7 @@ public class ViewPageActivity extends AppCompatActivity {
 
         PagerAdapter pagerAdapter = new PagerAdapter() {
 
+            private String[] mTitles = new String[]{"第一页", "第二页", "第三页"};
 
             @Override
             public int getCount() {
@@ -65,6 +66,11 @@ public class ViewPageActivity extends AppCompatActivity {
                 //return super.instantiateItem(container, position);
                 return viewList.get(position);
             }
+
+            @Override
+            public CharSequence getPageTitle(int position) {
+                return mTitles[position];
+            }
         };
 
         viewPager.setAdapter(pagerAdapter);
@@ -74,7 +80,10 @@ public class ViewPageActivity extends AppCompatActivity {
         two = mTablyout.getTabAt(1);
         three = mTablyout.getTabAt(2);
 
+        one.setIcon(getResources().getDrawable(R.drawable.ic_android_black));
+        two.setIcon(getResources().getDrawable(R.drawable.ic_assignment_return_black));
+        three.setIcon(getResources().getDrawable(R.drawable.ic_face_black));
 
 
-    }
+      }
 }
