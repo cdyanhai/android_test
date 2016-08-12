@@ -1,5 +1,6 @@
 package com.example.yanxiaoyong.myapplication;
 
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -16,11 +17,18 @@ public class ViewPageActivity extends AppCompatActivity {
     private View view1,view2,view3;
     private ViewPager viewPager;
     private List<View> viewList;
+    private TabLayout mTablyout;
+
+    private TabLayout.Tab one;
+    private TabLayout.Tab two;
+    private TabLayout.Tab three;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_page);
 
+        mTablyout = (TabLayout)findViewById(R.id.tabLayout);
         viewPager = (ViewPager)findViewById(R.id.viewpager);
         LayoutInflater layoutInflater = getLayoutInflater();
         view1 = layoutInflater.inflate(R.layout.layout1,null);
@@ -60,5 +68,13 @@ public class ViewPageActivity extends AppCompatActivity {
         };
 
         viewPager.setAdapter(pagerAdapter);
+
+        mTablyout.setupWithViewPager(viewPager);
+        one = mTablyout.getTabAt(0);
+        two = mTablyout.getTabAt(1);
+        three = mTablyout.getTabAt(2);
+
+
+
     }
 }
