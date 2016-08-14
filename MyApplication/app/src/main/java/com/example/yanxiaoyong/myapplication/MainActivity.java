@@ -152,4 +152,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void OnFragment(View view){
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this, FragmentActivity.class);
+        startActivity(intent);
+    }
+
 }

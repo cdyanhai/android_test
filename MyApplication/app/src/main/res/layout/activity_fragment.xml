@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <fragment
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:name="com.example.yanxiaoyong.myapplication.fragment.TitleFragment"
+        android:id="@+id/fragment_title"
+        tools:layout="@layout/fragment_title">
+
+
+    </fragment>
+
+    <fragment
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:name="com.example.yanxiaoyong.myapplication.fragment.ContentFragment"
+        android:layout_below="@+id/fragment_title"
+        android:id="@+id/fragment_fragment_view2"
+        tools:layout="@layout/fragment_fragment_view2">
+
+
+    </fragment>
+
+
+</RelativeLayout>
