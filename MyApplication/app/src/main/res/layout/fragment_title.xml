@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.yanxiaoyong.myapplication.fragment.TitleFragment"
+    android:orientation="horizontal">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <Button
+        android:layout_width="137dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/fragment_btn"
+        android:text="@string/fragment_btn"
+        android:layout_gravity="right|top" />
+
+    <TextView
+        android:layout_width="229dp"
+        android:layout_height="48dp"
+        android:text="@string/fragment_title"
+        android:layout_gravity="left|top"
+        android:gravity="center" />
+
+</LinearLayout>

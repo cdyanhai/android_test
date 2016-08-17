@@ -6,4 +6,11 @@
     <string name="lyout_name1">第一页</string>
     <string name="lyout_name2">第二页</string>
     <string name="lyout_name3">第三页</string>
+
+    <string name="fragment_title">fragment title</string>
+    <string name="fragment_content">fragment 作为View</string>
+    <string name="fragment_btn">buttom</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

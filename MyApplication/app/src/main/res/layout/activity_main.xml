@@ -73,4 +73,13 @@
         android:layout_alignParentStart="true"
         android:onClick="OnViewPagerClick" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fragment"
+        android:id="@+id/button5"
+        android:layout_below="@+id/button2"
+        android:layout_toEndOf="@+id/button4"
+        android:onClick="OnFragment" />
+
 </RelativeLayout>

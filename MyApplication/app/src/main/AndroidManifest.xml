@@ -24,7 +24,8 @@
         <activity android:name=".ListActivity" />
         <activity android:name=".List2Activity" />
         <activity android:name=".RecyclerViewActivity" />
-        <activity android:name=".ViewPageActivity"></activity>
+        <activity android:name=".ViewPageActivity" />
+        <activity android:name=".FragmentActivity" />
     </application>
 
 </manifest>
