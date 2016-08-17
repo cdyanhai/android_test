@@ -15,7 +15,7 @@ public class Welcome2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome2);
 
-        mHandler.sendEmptyMessageDelayed(GOTO_MAIN_ACTIVITY, 1500);
+        mHandler.sendEmptyMessageDelayed(GOTO_MAIN_ACTIVITY, 500);
     }
 
     private  static final  int GOTO_MAIN_ACTIVITY = 0;

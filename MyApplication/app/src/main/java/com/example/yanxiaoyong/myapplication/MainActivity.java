@@ -37,12 +37,6 @@ public class MainActivity extends AppCompatActivity {
         textView.setMovementMethod(new ScrollingMovementMethod());
         mTv = (TextView)findViewById(R.id.textView);
 
-        OkHttpClient okHttpClient = new OkHttpClient.Builder()
-                .connectTimeout(10000L, java.util.concurrent.TimeUnit.MILLISECONDS)
-                .readTimeout(10000L, java.util.concurrent.TimeUnit.MILLISECONDS )
-                .build();
-
-        OkHttpUtils.initClient(okHttpClient);
 
         realmConfig = new RealmConfiguration.Builder(this).build();
         realm = Realm.getInstance(realmConfig);
@@ -137,6 +131,11 @@ public class MainActivity extends AppCompatActivity {
                         String  html = response;
                         textView.setText(html);
                     }
+
+                    @Override
+                    public void inProgress(float progress, long total, int id) {
+                        super.inProgress(progress, total, id);
+                    }
                 });
     }
 
@@ -155,6 +154,12 @@ public class MainActivity extends AppCompatActivity {
     public void OnFragment(View view){
         Intent intent = new Intent();
         intent.setClass(MainActivity.this, FragmentActivity.class);
+        startActivity(intent);
+    }
+
+    public  void OnAsyncTaskClick(View view){
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this, AsyncTaskActivity.class);
         startActivity(intent);
     }
 
