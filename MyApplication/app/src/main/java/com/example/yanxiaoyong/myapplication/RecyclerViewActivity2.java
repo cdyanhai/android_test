@@ -4,7 +4,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Toast;
 
+import com.example.yanxiaoyong.myapplication.widget.DividerItemDecoration;
 import com.example.yanxiaoyong.myapplication.widget.GalleryAdapter;
 
 import java.util.ArrayList;
@@ -27,9 +30,19 @@ public class RecyclerViewActivity2 extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(linearLayoutManager);
+        mRecyclerView.addItemDecoration(new DividerItemDecoration(this));
         //设置适配器
         mAdapter = new GalleryAdapter(this, mDatas);
         mRecyclerView.setAdapter(mAdapter);
+
+        mAdapter.setOnItemClickListener(new GalleryAdapter.OnRecyclerViewItemClickListener(){
+            @Override
+            public void onItemClick(View view, String data) {
+                Toast.makeText(getApplicationContext(), data,
+                        Toast.LENGTH_SHORT).show();
+            }
+        } );
+
 
 
     }

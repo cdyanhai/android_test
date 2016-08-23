@@ -17,16 +17,33 @@ import com.example.yanxiaoyong.myapplication.R;
 import java.util.List;
 
 public class GalleryAdapter extends
-        RecyclerView.Adapter<GalleryAdapter.ViewHolder>
-{
+        RecyclerView.Adapter<GalleryAdapter.ViewHolder> implements View.OnClickListener {
 
     private LayoutInflater mInflater;
     private List<Integer> mDatas;
+
+    private OnRecyclerViewItemClickListener mOnItemClickListener = null;
+
+    //define interface
+    public interface OnRecyclerViewItemClickListener {
+        void onItemClick(View view , String data);
+    }
 
     public GalleryAdapter(Context context, List<Integer> datats)
     {
         mInflater = LayoutInflater.from(context);
         mDatas = datats;
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (mOnItemClickListener != null){
+            mOnItemClickListener.onItemClick(view,view.getTag().toString());
+        }
+    }
+
+    public void setOnItemClickListener(OnRecyclerViewItemClickListener listener) {
+        this.mOnItemClickListener = listener;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder
@@ -58,6 +75,8 @@ public class GalleryAdapter extends
 
         viewHolder.mImg = (ImageView) view
                 .findViewById(R.id.id_index_gallery_item_image);
+
+        view.setOnClickListener(this);
         return viewHolder;
     }
 
@@ -68,6 +87,7 @@ public class GalleryAdapter extends
     public void onBindViewHolder(final ViewHolder viewHolder, final int i)
     {
         viewHolder.mImg.setImageResource(mDatas.get(i));
+        viewHolder.itemView.setTag(mDatas.get(i));
     }
 
 }
